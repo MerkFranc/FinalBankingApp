@@ -1,0 +1,15 @@
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/bin/Debug/net10.0/Final
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/bin/Debug/net10.0/Final.deps.json
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/bin/Debug/net10.0/Final.runtimeconfig.json
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/bin/Debug/net10.0/Final.dll
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/bin/Debug/net10.0/Final.pdb
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.GeneratedMSBuildEditorConfig.editorconfig
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.AssemblyInfoInputs.cache
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.AssemblyInfo.cs
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.csproj.CoreCompileInputs.cache
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.sourcelink.json
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.dll
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/refint/Final.dll
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.pdb
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/Final.genruntimeconfig.cache
+/Users/frank/Coding/Snow/cs1410/FinalBankingApp/obj/Debug/net10.0/ref/Final.dll
