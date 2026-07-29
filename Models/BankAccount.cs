@@ -10,6 +10,12 @@ public abstract class BankAccount
     public string AccountHolderName { get; set; }
     public AccountType Type { get; }
 
+    private readonly List<Transaction> _history = new();
+    public IReadOnlyList<Transaction> History => _history;
+
+    
+
+
     public decimal Balance
     {
         get
@@ -31,7 +37,15 @@ public abstract class BankAccount
 
     public BankAccount(string accountHolderName, decimal initialDeposit, AccountType type)
     {
-        AccountNumber = "ACC-" + Guid.NewGuid().ToString("N")[..8].ToUpper();
+        if (type == AccountType.Checking)
+        {
+            AccountNumber = "C-" + Guid.NewGuid().ToString("N")[..4].ToUpper();
+        }
+        else if (type == AccountType.Savings)
+        {
+            AccountNumber = "S-" + Guid.NewGuid().ToString("N")[..4].ToUpper();
+        }
+        
         AccountHolderName = accountHolderName;
         Type = type;
         Balance = initialDeposit;
@@ -39,12 +53,18 @@ public abstract class BankAccount
 
     public void Deposit(decimal amount)
     {
-        if (amount < 0)
+        if (amount <= 0)
         {
             throw new ArgumentException("Deposit amount must be positive.");
         }
 
+        AddToBalance(amount, TransactionType.Deposit);
+    }
+
+    protected void AddToBalance(decimal amount, TransactionType transactionType)
+    {
         Balance += amount;
+        LogTransaction(transactionType, amount);
     }
 
     public virtual void Withdraw(decimal amount)
@@ -60,5 +80,10 @@ public abstract class BankAccount
         }
 
         Balance -= amount;
+        LogTransaction(TransactionType.Withdrawal, amount);
+    }
+    protected void LogTransaction(TransactionType type, decimal amount)
+    {
+        _history.Add(new Transaction(type, amount));
     }
 }

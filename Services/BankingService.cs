@@ -1,3 +1,4 @@
+using System.Text.Json;
 using BankingApp.Models;
 
 namespace BankingApp.Services;
@@ -57,4 +58,25 @@ public class BankService
         destination.Deposit(amount);
     }
 
+    public async Task SaveToFileAsync(string path)
+    {
+        List<CustomerSnapshot> customerSnapshots = _customers.Values
+            .Select(c => new CustomerSnapshot(
+                c.CustomerId,
+                c.Name,
+                c.Accounts.Values
+                    .Select(a => new AccountSnapshot(a.AccountNumber, a.Type.ToString(), a.Balance))
+                    .ToList()))
+            .ToList();
+
+        BankSnapshot snapshot = new BankSnapshot(DateTime.Now, customerSnapshots);
+        string json = JsonSerializer.Serialize(snapshot, new JsonSerializerOptions { WriteIndented = true });
+        await File.WriteAllTextAsync(path, json);
+    }
+
+    public async Task<BankSnapshot?> LoadSnapshotAsync(string path)
+    {
+        string json = await File.ReadAllTextAsync(path);
+        return JsonSerializer.Deserialize<BankSnapshot>(json);
+    }
 }

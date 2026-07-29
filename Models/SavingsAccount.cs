@@ -16,6 +16,6 @@ public class SavingsAccount : BankAccount
     public void ApplyInterest()
     {
         decimal interest = Balance * InterestRate;
-        Deposit(interest);
+        AddToBalance(interest, TransactionType.Interest);
     }
 }

@@ -10,7 +10,7 @@ public class Customer
 
     public Customer(string name)
     {
-        CustomerId = "Cust-" + Guid.NewGuid().ToString("N")[..6].ToUpper();
+        CustomerId = $"{name}-" + Guid.NewGuid().ToString("N")[..3].ToUpper();
         Name = name;
         _accounts = new Dictionary<string, BankAccount>();
     }

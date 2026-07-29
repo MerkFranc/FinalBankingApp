@@ -43,5 +43,6 @@ public class CheckingAccount : BankAccount
 
         // The base setter now permits this because MinimumBalance is -OverdraftLimit.
         Balance -= amount;
+        LogTransaction(TransactionType.Withdrawal, amount);
     }
 }
