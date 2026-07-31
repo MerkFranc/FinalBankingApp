@@ -1,35 +1,25 @@
 {
-  "SaveAt": "2026-07-29T14:47:56.263274-06:00",
+  "SaveAt": "2026-07-30T14:22:06.400662-06:00",
   "Customers": [
     {
-      "CustomerId": "Fran-4A2",
-      "Name": "Fran",
+      "CustomerId": "fran-714",
+      "Name": "fran",
       "Accounts": [
         {
-          "AccountNumber": "C-CC76",
+          "AccountNumber": "C-9BA8",
           "Type": "Checking",
-          "Balance": 600
-        },
-        {
-          "AccountNumber": "S-CA23",
-          "Type": "Savings",
-          "Balance": 20000
+          "Balance": 800
         }
       ]
     },
     {
-      "CustomerId": "Ben-564",
-      "Name": "Ben",
-      "Accounts": []
-    },
-    {
-      "CustomerId": "Ben-2AC",
+      "CustomerId": "Ben-A1F",
       "Name": "Ben",
       "Accounts": [
         {
-          "AccountNumber": "C-8F3F",
+          "AccountNumber": "C-4A73",
           "Type": "Checking",
-          "Balance": 31400
+          "Balance": 1000
         }
       ]
     }

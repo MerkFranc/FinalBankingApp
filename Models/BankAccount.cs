@@ -5,7 +5,7 @@ namespace BankingApp.Models;
 public abstract class BankAccount
 {
     private decimal _balance;
-
+    protected virtual decimal MinimumBalance => 0;
     public string AccountNumber { get; }
     public string AccountHolderName { get; set; }
     public AccountType Type { get; }
@@ -31,9 +31,6 @@ public abstract class BankAccount
             _balance = value;
         }
     }
-
-    /// Defaults to 0; subclasses (e.g. accounts with overdraft) can override this.
-    protected virtual decimal MinimumBalance => 0;
 
     public BankAccount(string accountHolderName, decimal initialDeposit, AccountType type)
     {
